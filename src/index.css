@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1470px;
+  margin-inline: auto;
+  padding: 20px;
+}
+.inout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 15px;
+}
+
+body {
+  background: linear-gradient(
+    270deg,
+    rgb(28, 0, 255),
+    #5d90dcd8 50%,
+    rgb(0, 28, 255) 100%
+  );
+}
+
+.ou {
+  width: 520px;
+  height: 515px;
+  opacity: 0px;
+  border: 3px solid #ffffff15;
+  border-radius: 25px;
+  margin-top: 100px;
+  background: #831a1a42;
+}
+.ou1 {
+  width: 520px;
+  height: 650px;
+  opacity: 0px;
+  border: 3px solid #ffffff15;
+  border-radius: 25px;
+  margin-top: 50px;
+  background: #831a1a42;
+}
+.div1 {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.table {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 800px;
+  background: inherit;
+}
+.vite {
+  margin-top: 80px;
+}
+.input {
+  padding: 15px 10px;
+  background-color: #fff;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.background-clip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.sar {
+  color: #fff;
+}
+.div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.orab {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  color: #fff;
+  gap: 5px;
+}
+.btn4 {
+  text-decoration: dashed;
+  text-align: center;
+}
+ul {
+  list-style: none;
+}
+.btn {
+  cursor: pointer;
+  width: 90%;
+  margin: auto;
+  background: #003465;
+  border: none;
+  opacity: 0px;
+  padding: 15px;
+  color: #fff;
+  border-radius: 4px;
+}
+.orab7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  cursor: pointer;
+}
+.orab7:active {
+  color: red;
+}
+header {
+  background-color: #831a1a42;
+  color: #fff;
+}
+.headercontainer {
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
