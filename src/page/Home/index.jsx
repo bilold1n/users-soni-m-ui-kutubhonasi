@@ -8,15 +8,16 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-function createData(name, pasword, firsName, numberPhone) {
-  return { name, pasword, firsName, numberPhone };
-}
-const data = JSON.parse(localStorage.getItem("users")) ?? [];
-const rows = data.filter(({ name, pasword, firsName, numberPhone }) => {
-  return createData(name, pasword, firsName, pasword);
-});
 
 export default function Home() {
+  useEffect(() => {}, []);
+  function createData(name, pasword, firsName, numberPhone) {
+    return { name, pasword, firsName, numberPhone };
+  }
+  const data = JSON.parse(localStorage.getItem("users")) ?? [];
+  const rows = data.filter(({ name, pasword, firsName, numberPhone }) => {
+    return createData(name, pasword, firsName, pasword);
+  });
   return (
     <div className="vite">
       <div className="table">
