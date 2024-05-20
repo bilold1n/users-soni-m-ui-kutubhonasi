@@ -1,4 +1,5 @@
 import React, { memo, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -10,16 +11,28 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function Home() {
-  useEffect(() => {}, []);
-  function createData(name, pasword, firsName, numberPhone) {
-    return { name, pasword, firsName, numberPhone };
+  const [data, setData] = useState(
+    JSON.parse(localStorage.getItem("users")) ?? []
+  );
+
+  function deleteItem(params) {
+    const filterItem = data.filter((row) => row.id !== params);
+    console.log(filterItem);
+    localStorage.setItem("users", JSON.stringify(filterItem));
+    setData(JSON.parse(localStorage.getItem("users")));
   }
-  const data = JSON.parse(localStorage.getItem("users")) ?? [];
-  const rows = data.filter(({ name, pasword, firsName, numberPhone }) => {
-    return createData(name, pasword, firsName, pasword);
-  });
+
+  function submit() {
+    localStorage.setItem("user", JSON.stringify(false));
+    navigate("/");
+  }
   return (
     <div className="vite">
+      <div className="oil">
+        <Link to={"/signup"} className="btn btn4 yan" onClick={submit}>
+          Creat users
+        </Link>
+      </div>
       <div className="table">
         <TableContainer className="table" component={Paper}>
           <Table
@@ -45,7 +58,7 @@ export default function Home() {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
+              {data.map((row) => (
                 <TableRow
                   key={row.name}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -58,8 +71,14 @@ export default function Home() {
                   <TableCell align="right">{row.numberPhone}</TableCell>
                   <TableCell align="right">
                     <IconButton
-                      onChange={() => {
-                        console.log(1);
+                      onClick={() => {
+                        const form = data.map(({ id }) => {
+                          console.log(data);
+                          console.log(id);
+                          deleteItem(id);
+                          return id;
+                        });
+                        console.log(form);
                       }}
                       aria-label="delete"
                       size="large"

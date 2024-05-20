@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Signup() {
   const navigate = useNavigate();
   const [userinput, setuserinput] = useState({
+    id: Math.floor(Math.random() * 1000000),
     name: "",
     pasword: "",
     firsName: "",
@@ -15,6 +16,7 @@ function Signup() {
     localStorage.setItem("user", JSON.stringify(true));
     navigate("/layout");
     setuserinput({
+      id: Math.floor(Math.random() * 1000000),
       name: "",
       pasword: "",
       firsName: "",

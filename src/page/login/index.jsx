@@ -18,6 +18,7 @@ function Login() {
     if (userf.length) {
       localStorage.setItem("user", JSON.stringify(true));
       naviate("/layout");
+      console.log(1);
     } else {
       localStorage.setItem("user", JSON.stringify(false));
     }

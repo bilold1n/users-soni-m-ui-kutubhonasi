@@ -131,3 +131,12 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+.oil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.yan {
+  width: 300px;
+  margin-bottom: 50px;
+}
